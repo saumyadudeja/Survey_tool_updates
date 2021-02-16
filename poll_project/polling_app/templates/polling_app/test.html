@@ -1,0 +1,38 @@
+
+
+{% block title %} {{survey.name}} {% endblock title %}
+
+
+{% block body %}
+	<h1> {{survey.name}} </h1>
+	
+	<div>
+		<form action="{% url 'survey_detail' id=survey.id %}" method="post">
+
+	    {% csrf_token %}
+        
+		<li>{{ data }}</li>
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default">
+                    <div class="category-container">
+				            <div class="panel-body">
+	                           {% include "polling_app/questions.html" %}
+                            </div>
+		            </div>
+                </div>
+            </div>
+        
+            <h3> {% trans "Questions" %} </h3>
+            {% include "polling_app/questions.html" %}
+        
+
+        <br>
+		
+	    <input
+            class="btn btn-default btn-lg"
+	        type="submit"
+	        value="{% trans "Submit" %}"
+        >
+
+	</form></div>
+{% endblock %}

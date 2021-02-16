@@ -1,0 +1,25 @@
+{% extends "polling_app/base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">By clicking vote, you agree to opt in into the screening process for survey respondents</h3>
+            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <label><strong>Respondent screening Questions</strong></label>
+                    <span class="pull-right">
+                        <a href="{% url 'screening' %}" class="btn btn-info btn-xs">Vote</a> &nbsp;
+                    </span>
+                </li>   
+            </ul>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

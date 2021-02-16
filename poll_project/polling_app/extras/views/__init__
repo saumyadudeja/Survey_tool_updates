@@ -1,0 +1,4 @@
+from polling_app.views.screening_view import Screening
+from polling_app.views.index_view import IndexView
+
+__all__=['IndexView','Screening']

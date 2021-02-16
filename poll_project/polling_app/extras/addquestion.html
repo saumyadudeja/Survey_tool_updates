@@ -1,0 +1,90 @@
+{% load widget_tweaks %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Respondent Screening</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+<link href="../../static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="../../static/form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container">
+  <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="../../static/assets/brand/fraunhofer_logo.jpg" alt="" width="72" height="72">
+    <h2>Question Creation form</h2>
+    <p class="lead">Please answer these questions to enter a survey.</p>
+  </div>
+    <div class="col-md-8 order-md-1 justify-content-center">
+      <form class="needs-validation" novalidate method="POST">{% csrf_token %} 
+        <div class="row">
+          <div class="col-md-12">
+            <label for="text">Text</label>
+        
+            {% render_field form.text class="form-control" type="text":required %}
+            
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="required">Required?</label>
+        
+            {% render_field form.required class="form-control" type="checkbox" %}
+            
+          </div>
+
+           
+
+          <div class="col-md-6 mb-3">
+            <label for="image">Image</label>
+            
+            {% render_field form.image class="form-control d-block w-100" type="file" accept="image/png, image/jpeg" %}
+            
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="type">Type</label>
+            
+            {% render_field form.type class="custom-select d-block w-100" type="select" %}
+            
+          </div>
+          
+
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit" id="greenSubmit">Submit</button>
+        <style type="text/css">
+          #greenSubmit {
+            background-color: #179c7d;
+            border:#179c7d;
+          }
+        </style>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../../static/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../../static/assets/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../../static/form-validation.js"></script></body>
+</html>
